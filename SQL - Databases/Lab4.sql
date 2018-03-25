@@ -1,0 +1,11 @@
+﻿SELECT * from cs130_2017_lab4 where (downloadts >= '2017-01-21 00:00:00') and (downloadts <= '2017-01-21 23:59:59');
+SELECT * from cs130_2017_lab4 where (downloadts >= '2016-12-13 00:00:00') and (downloadts <= '2016-12-13 23:59:59');
+SELECT * from cs130_2017_lab4 where user_agent ~* '^.*ubuntu.*linux.*firefox.*$';
+SELECT * from cs130_2017_lab4 where user_agent ~* '^.*AppleWebKit/\d{1,}\.\d{1,}\.\d{1,}.*$';
+SELECT * from cs130_2017_lab4 where (EXTRACT(DOW FROM downloadts) = 0) and (downloadts >= '2016-01-01 00:00:00') and (downloadts <= '2016-12-31 23:59:59') and user_agent ~*'^.*Googlebot.*$';
+SELECT * from cs130_2017_lab4 where filename ~* '^(a|e|i|o|u).*(a|e|i|o|u).mpeg$';
+SELECT * from cs130_2017_lab4 where NOT filename ~* '.*(a|e|i|o|u).*$';
+SELECT * from cs130_2017_lab4 where char_length(appname)%2=0 and char_length(filename)%2=0 and filename LIKE '%.mp3';
+SELECT * from cs130_2017_lab4 where appname ~* '^(a|e|i|o|u){1,}$';
+SELECT * from cs130_2017_lab4 where (date_part('month', downloadts)+date_part('day',downloadts)+date_part('hour',downloadts)+date_part('minutes',downloadts)+date_part('seconds',downloadts)=42) AND date_part('year',downloadts)!=2016;
+SELECT * from cs130_2017_lab4 where (filesize>=400) and (date_part('hour'%2=0, downloadts) and date_part('day'%2=0, downloadts));

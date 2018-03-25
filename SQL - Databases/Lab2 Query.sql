@@ -1,0 +1,1 @@
+﻿SELECT car_make, car_model from cs130lab2 ORDER BY car_make;

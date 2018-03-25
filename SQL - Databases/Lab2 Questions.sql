@@ -1,0 +1,11 @@
+﻿SELECT * from cs130lab2 WHERE car_color='Yellow';
+SELECT * from cs130lab2 WHERE parking_day !='Saturday' and parking_day !='Sunday';
+SELECT * from cs130lab2 WHERE car_model LIKE '%2500';
+SELECT * from cs130lab2 WHERE car_make='Toyota' and car_model='Corolla';
+SELECT car_reg,car_make,car_model from cs130lab2 WHERE car_reg LIKE '%MH%' or car_reg LIKE '%KE%';
+SELECT car_reg,car_make,car_model from cs130lab2 WHERE car_reg LIKE '16%';
+SELECT car_reg,num_occupants,parking_hours from cs130lab2 WHERE (parking_hours>=4) and (num_occupants>=3);
+SELECT car_reg,parking_day,parking_level,car_color from cs130lab2 WHERE (parking_level>=3 and parking_day='Tuesday') or car_color='Green';
+SELECT * from cs130lab2 WHERE car_make LIKE 'T%' and car_model LIKE 'T%' and parking_day LIKE 'T%';
+SELECT * from cs130lab2 WHERE car_reg LIKE '%-D-%' and (parking_level!=3);
+SELECT * from cs130lab2 WHERE car_reg LIKE '1%' and car_reg LIKE '%1' and (car_make='BMW' or car_make='Chevrolet');

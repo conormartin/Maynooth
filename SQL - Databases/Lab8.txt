@@ -1,0 +1,30 @@
+SELECT S.storename, S.storestate, P.productname
+FROM lab8_stores as S, lab8_products as P, lab8_sells as J
+WHERE (S.storeid = J.storeid) AND (P.productid=J.productid) AND (S.storestate='Florida');
+
+SELECT S.storename, P.productname
+FROM lab8_stores as S, lab8_products as P, lab8_sells as J
+WHERE (S.storeid = J.storeid) AND (P.productid=J.productid) AND (P.price>=10 AND P.Price<=50);
+
+UPDATE lab8_stores
+SET
+	storeid='CS130A'
+WHERE storename='Realpoint';
+SELECT * From lab8_sells where storeid='CS130A';
+
+DELETE FROM lab8_stores
+WHERE ((storename='Twitterbridge') AND (storeid='YK67IA'));
+SELECT * From lab8_sells where storeid='YK67IA';
+
+UPDATE lab8_stores
+SET
+	storemanager='Susan Reid'
+WHERE storename='Zoomdog';
+
+UPDATE lab8_products
+SET	
+	price=price*1.1
+WHERE productname='SanDisk 32GB Ultra Class Memory Card';
+
+DELETE FROM lab8_products
+WHERE productname='ARRIS SURFboard';
