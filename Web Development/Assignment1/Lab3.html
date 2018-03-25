@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="Lab3.css">
+    <title>Grades Table</title>
+</head>
+<body>
+    <table id="tableData">
+        <thead>
+            <div id="titleBar">
+                <tr>
+                    <th class="header">Name</th>
+                    <th class="header">Student ID</th>
+                    <th class="header">Assignment 1</th>
+                    <th class="header">Assignment 2</th>
+                    <th class="header">Assignment 3</th>
+                    <th class="header">Assignment 4</th>
+                    <th class="header">Assignment 5</th>
+                    <th class="header">Final Grade</th>
+                </tr>
+            </div>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name">Conor Martin</td>
+                <td class="ID">18678974</td>
+                <td class="result" contenteditable="true" >-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Conor Martino</td>
+                <td class="ID">18123344</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Conor Martinez</td>
+                <td class="ID">18967174</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Conor Nerney</td>
+                <td class="ID">18966174</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Eoin Goslin</td>
+                <td class="ID">18496174</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Mark Murphy</td>
+                <td class="ID">18961674</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Shane Dolan</td>
+                <td class="ID">18978954</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Lynn Challoner</td>
+                <td class="ID">17616754</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Willie McCarter</td>
+                <td class="ID">18935124</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+            <tr>
+                <td class="name">Stephen O'Brien</td>
+                <td class="ID">18954741</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="result" contenteditable="true" onkeyup="calculateAverage()">-</td>
+                <td class="average"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div align="center">
+        <button onclick="totalUnsubmitted()">Count Unsubmitted</button>
+        <button id="averageBtn" onclick="calculateAverage()">Calculate Average</button>
+    </div>
+
+    <div id="unsubmitted">
+        <h3 id="assignments">Unsubmitted Assignments: <span></span></h3>
+    </div>
+
+    <div id="csvDiv">
+        <button id="csvBtn" onclick="convertToCsv()">Convert to CSV</button>
+        <textarea name="csv" id="csvTextArea" cols="8" rows="11"></textarea>
+    </div>
+
+    <script type="text/javascript" src="Lab3.js"></script>
+</body>
+</html>

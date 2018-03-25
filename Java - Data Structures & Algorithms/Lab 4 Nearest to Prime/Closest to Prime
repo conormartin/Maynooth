@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Lab4_NearestPrime
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		int size = n*n; //Make array large as nearest prime to n is unknown
+
+		boolean sieve[] = new boolean[size];
+		sieve[0] = false;
+		sieve[1] = false;
+		for(int i = 2; i < size; i++)
+		{
+			sieve[i] = true; //Set every element to true except 0 and 1 as they're not prime
+		}
+		int shortestDist = n, closestPrime = 0;
+
+		for(int i = 2; i < size; i++)
+		{
+			if(sieve[i] == true)
+			{
+				if(Math.abs(n-i)<shortestDist) //If the distance between the current prime and n is less than the shortest distance so far
+				{
+					shortestDist = Math.abs(n-i); //set the new value to the current shortest distance
+					closestPrime = i; //set the closest prime to the current prime number
+				}
+			}
+
+			else
+			{
+				break; //If the distance ever gets bigger than the record then you're past the shortest possible distance
+			}
+				
+			for(int j = i+i; j < size; j+=i) //When we've found a prime, set every multiple of that prime to false
+			{	
+				sieve[j] = false;
+			}
+		}
+
+		System.out.println(closestPrime);
+	}
+}

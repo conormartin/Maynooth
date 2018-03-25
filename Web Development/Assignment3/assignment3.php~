@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Assignment3.css">
+    <title>Assignment3</title>
+</head>
+<body>
+    <div id="form">
+        <form action="insertData.php" method="POST">
+            <input action="insertData.php" type="text" name="creator" placeholder="creator">
+            <input action="insertData.php" type="text" name="title" placeholder="title">
+            <input action="insertData.php" type="text" name="type" placeholder="type">
+            <input action="insertData.php" type="text" name="identifier" placeholder="identifier">
+            <input action="insertData.php" type="date" name="date" placeholder="date">
+            <input action="insertData.php" type="text" name="language" placeholder="language">
+            <input action="insertData.php" type="text" name="description" placeholder="description">
+            <input type="submit">
+        </form>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Creator</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Identifier</th>
+            <th>Date</th>
+            <th>Language</th>
+            <th>Description</th>
+        </tr>
+    </table>
+</body>
+</html>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cs230";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$creator =  $_POST["creator"];
+$title =  $_POST["title"];
+$type =  $_POST["type"];
+$identifier =  $_POST["identifier"];
+$date =  $_POST["date"];
+$language =  $_POST["language"];
+$description =  $_POST["description"];
+
+$sql = "INSERT INTO eBook_MetaData (creator, title, type, identifier, date, language, description)
+VALUES ($creator, $title, $type, $identifier, $date, $language, $description)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "sqlr00t";
+$dbname = "CS230";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT id, creator, title, type, identifier, date, language, description FROM eBook_MetaData";
+$result = $conn->query($sql);
+
+
+$id =  $_POST["id"];
+$creator =  $_POST["creator"];
+$title =  $_POST["title"];
+$type =  $_POST["type"];
+$identifier =  $_POST["identifier"];
+$date =  $_POST["date"];
+$language =  $_POST["language"];
+$description =  $_POST["description"];
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo $row["id"]. $row["creator"]. $row["title"]. $row["type"]. $row["identifier"]. $row["date"]. $row["language"]. $row["description"];
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>

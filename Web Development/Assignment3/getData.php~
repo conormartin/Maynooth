@@ -1,0 +1,65 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Assignment3";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+//redirect back to same page
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+$sql = "SELECT * FROM eBook_MetaData";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+//redirect('home.php', false);
+ while($rows = $result->fetch_assoc())
+    {
+        echo "
+<table>
+        <thead>
+	    <tr>
+            	<th>ID</th>
+            	<th>Creator</th>
+            	<th>Title</th>
+            	<th>Type</th>
+            	<th>Identifier</th>
+            	<th>Date</th>
+            	<th>Language</th>
+            	<th>Description</th>
+            </tr>
+	</thead>
+
+	<tbody>
+ <tr>
+            <td>".$rows["id"]."</td>
+            <td>".$rows["creator"]."</td>
+            <td>".$rows["title"]."</td>
+	    <td>".$rows["type"]."</td>
+	    <td>".$rows["identifier"]."</td>
+	    <td>".$rows["date"]."</td>
+	    <td>".$rows["language"]."</td>
+	    <td>".$rows["description"]."</td>
+        </tr>
+	</tbody>
+    </table>
+       
+        ";
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>

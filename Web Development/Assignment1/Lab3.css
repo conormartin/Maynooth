@@ -1,0 +1,92 @@
+.header {
+    text-align: center;
+}
+
+.ID, .name {
+    text-align: left;
+}
+
+.result, .average {
+    text-align: right;
+}
+
+/* #assignments {
+    f
+} */
+
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-family: sans-serif;
+    border-collapse: collapse;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+th {
+    background: rgb(102, 168, 223);
+    text-transform: uppercase;
+}
+
+table th:first-child{
+    border-radius:10px 0 0 0;
+}
+  
+table th:last-child{
+    border-radius:0 10px 0 0;
+}
+
+td, th {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    padding: 8px;
+}
+
+.name {
+    border-left: none;
+}
+
+.header {
+    border: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 1em;
+    font-size: 16px;
+    background-color:  rgb(102, 168, 223);
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: rgb(76, 122, 160);
+    color: rgb(233, 231, 231);
+}
+
+#csvTextArea {
+    width: 600px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#csvBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+#unsubmitted {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(102, 168, 223);
+    width: max-content;
+    padding: 1px;
+    border-radius: 10px;
+    margin: 20 auto;
+}
